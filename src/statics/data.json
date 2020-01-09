@@ -1,0 +1,401 @@
+{
+  "latest": [
+    {
+      "title": "Aqueous solution-processed AlOx dielectrics and their biased radiation response investigated by an on-site technique",
+      "author": "Yuxiao Fang",
+      "date": "2020-05-01"
+    },
+    {
+      "title": "Elimination of photovoltaic mismatching with improved submodule differential power processing",
+      "author": "Guanying Chu",
+      "date": "2020-04-01"
+    },
+    {
+      "title": "Restarted simpler GMRES augmented with harmonic Ritz vectors and approximate errors",
+      "author": "Zhen Yang",
+      "date": "2020-04-01"
+    },
+    {
+      "title": "Numerical investigation on hydraulic and thermal characteristics of micro latticed pin fin in the heat sink",
+      "author": "Xiang Wang",
+      "date": "2020-03-01"
+    },
+    {
+      "title": "Synthesis, structure and electrochemistry of ruthenium(II) and (III) mono- and bis-oxalato complexes",
+      "author": "Fawzia O. Elnajjar",
+      "date": "2020-03-01"
+    },
+    {
+      "title": "Predicting customer absence for automobile 4S shops: A lifecycle perspective",
+      "author": "Jiawe Wang",
+      "date": "2020-03-01"
+    },
+    {
+      "title": "Generalized multiscale approximation of mixed finite elements with velocity elimination for subsurface flow",
+      "author": "Jie Chen",
+      "date": "2020-03-01"
+    },
+    {
+      "title": "The response of grassland mycorrhizal fungal abundance to a range of long-term grazing intensities",
+      "author": "Maede Faghihinia",
+      "date": "2020-03-01"
+    },
+    {
+      "title": "Observational and experimental evidence for the effect of altered precipitation on desert and steppe communities",
+      "author": "Xiaoan Zuo",
+      "date": "2020-03-01"
+    },
+    {
+      "title": "Long-term empirical monitoring indicates the tolerance of the giant panda habitat to climate change under contemporary conservation policies",
+      "author": "Ting Li",
+      "date": "2020-03-01"
+    }
+  ],
+  "keyword": [],
+  "overview": {
+    "metadata": 2560,
+    "firstAuthor": 608,
+    "authors": 608,
+    "citations": 19690,
+    "fulltext": 0,
+    "years": {
+      "start": 2007,
+      "end": 2020
+    }
+  },
+  "statistics": {
+    "publisher": [
+      {
+        "Institute of Electrical and Electronics Engineers Inc.": 459
+      },
+      {
+        "Elsevier Ltd.": 185
+      },
+      {
+        "Elsevier B.V.": 160
+      },
+      {
+        "Elsevier": 82
+      },
+      {
+        "IEEE Computer": 58
+      },
+      {
+        "Newswood": 46
+      },
+      {
+        "Springer": 41
+      },
+      {
+        "Royal Society of Chemistry": 38
+      },
+      {
+        "MDPI": 36
+      }
+    ],
+    "byYear": [
+      {
+        "2020": 23
+      },
+      {
+        "2019": 404
+      },
+      {
+        "2018": 404
+      },
+      {
+        "2017": 300
+      },
+      {
+        "2016": 286
+      },
+      {
+        "2015": 264
+      },
+      {
+        "2014": 225
+      },
+      {
+        "2013": 217
+      },
+      {
+        "2012": 162
+      },
+      {
+        "2011": 104
+      },
+      {
+        "2010": 66
+      },
+      {
+        "2009": 22
+      },
+      {
+        "2008": 9
+      },
+      {
+        "2007": 2
+      }
+    ],
+    "contentType": [
+      {
+        "Journal": 1545
+      },
+      {
+        "Conference Proceeding": 764
+      },
+      {
+        "Book Series": 109
+      },
+      {
+        "Book": 69
+      },
+      {
+        "Trade Journal": 1
+      }
+    ],
+    "language": []
+  },
+  "partnerCountry": [
+    {
+      "China": 3844
+    },
+    {
+      "United Kingdom": 917
+    },
+    {
+      "United States": 366
+    },
+    {
+      "Australia": 152
+    },
+    {
+      "South Korea": 134
+    },
+    {
+      "Hong Kong": 114
+    },
+    {
+      "Malaysia": 96
+    },
+    {
+      "Canada": 93
+    },
+    {
+      "Lithuania": 71
+    },
+    {
+      "Germany": 70
+    },
+    {
+      "Italy": 66
+    },
+    {
+      "Japan": 63
+    },
+    {
+      "India": 59
+    },
+    {
+      "Singapore": 56
+    },
+    {
+      "Spain": 47
+    },
+    {
+      "Belgium": 45
+    },
+    {
+      "France": 45
+    },
+    {
+      "Netherlands": 42
+    },
+    {
+      "New Zealand": 42
+    },
+    {
+      "Denmark": 41
+    },
+    {
+      "Brazil": 34
+    },
+    {
+      "Pakistan": 32
+    },
+    {
+      "Sweden": 26
+    },
+    {
+      "Taiwan": 25
+    },
+    {
+      "Switzerland": 21
+    },
+    {
+      "Thailand": 21
+    },
+    {
+      "Finland": 21
+    },
+    {
+      "Iran": 20
+    },
+    {
+      "Ireland": 18
+    },
+    {
+      "Turkey": 18
+    },
+    {
+      "Tunisia": 18
+    },
+    {
+      "Portugal": 14
+    },
+    {
+      "Viet Nam": 13
+    },
+    {
+      "Poland": 13
+    },
+    {
+      "South Africa": 12
+    },
+    {
+      "Austria": 12
+    },
+    {
+      "Ukraine": 11
+    },
+    {
+      "Russian Federation": 11
+    },
+    {
+      "Egypt": 11
+    },
+    {
+      "Czech Republic": 11
+    },
+    {
+      "Saudi Arabia": 10
+    },
+    {
+      "Norway": 10
+    },
+    {
+      "Greece": 9
+    },
+    {
+      "United Arab Emirates": 9
+    },
+    {
+      "Romania": 8
+    },
+    {
+      "Macao": 7
+    },
+    {
+      "Chile": 7
+    },
+    {
+      "Mexico": 6
+    },
+    {
+      "Argentina": 5
+    },
+    {
+      "Philippines": 5
+    },
+    {
+      "Qatar": 4
+    },
+    {
+      "Iraq": 4
+    },
+    {
+      "Laos": 4
+    },
+    {
+      "Israel": 3
+    },
+    {
+      "Nigeria": 3
+    },
+    {
+      "Bahamas": 2
+    },
+    {
+      "Serbia": 2
+    },
+    {
+      "Colombia": 2
+    },
+    {
+      "Azerbaijan": 2
+    },
+    {
+      "Indonesia": 2
+    },
+    {
+      "Kazakhstan": 2
+    },
+    {
+      "Ghana": 2
+    },
+    {
+      "Slovakia": 2
+    },
+    {
+      "Estonia": 2
+    },
+    {
+      "Lebanon": 2
+    },
+    {
+      "Kuwait": 2
+    },
+    {
+      "Hungary": 2
+    },
+    {
+      "Bermuda": 2
+    },
+    {
+      "Costa Rica": 1
+    },
+    {
+      "Svalbard and Jan Mayen": 1
+    },
+    {
+      "Afghanistan": 1
+    },
+    {
+      "Malta": 1
+    },
+    {
+      "Fiji": 1
+    },
+    {
+      "Rwanda": 1
+    },
+    {
+      "Algeria": 1
+    },
+    {
+      "Papua New Guinea": 1
+    },
+    {
+      "Bangladesh": 1
+    },
+    {
+      "Ecuador": 1
+    },
+    {
+      "Cambodia": 1
+    },
+    {
+      "Croatia": 1
+    }
+  ]
+}
