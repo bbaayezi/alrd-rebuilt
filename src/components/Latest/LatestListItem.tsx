@@ -17,7 +17,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export interface ILatestListItemProps {}
+export interface ILatestListItemProps {
+  title: string,
+  author: string,
+  date: string
+}
 
 export default function LatestListItem(props: ILatestListItemProps) {
   const classes = useStyles();
@@ -60,8 +64,7 @@ export default function LatestListItem(props: ILatestListItemProps) {
                   variant="subtitle1"
                   color="textPrimary"
                 >
-                  Aqueous solution-processed AlOx dielectrics and their biased
-                  radiation response investigated by an on-site technique
+                  {props.title}
                 </Typography>
                 <Popover
                   id="mouse-over-popover"
@@ -87,8 +90,7 @@ export default function LatestListItem(props: ILatestListItemProps) {
                       maxWidth: 400
                     }}
                   >
-                    Aqueous solution-processed AlOx dielectrics and their biased
-                    radiation response investigated by an on-site technique
+                    {props.title}
                   </Typography>
                 </Popover>
               </Box>
@@ -98,11 +100,11 @@ export default function LatestListItem(props: ILatestListItemProps) {
         secondary={
           <React.Fragment>
             <Typography component="span" variant="caption" color="textPrimary">
-              Yuxiao Fang
+              {props.author}
             </Typography>
             <br />
             <Typography component="span" variant="caption" color="textPrimary">
-              2020-05-01
+              {props.date}
             </Typography>
           </React.Fragment>
         }

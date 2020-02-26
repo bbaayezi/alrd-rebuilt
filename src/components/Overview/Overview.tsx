@@ -6,6 +6,10 @@ import OverviewMeta from "./OverviewMeta";
 import OverviewChart from "./OverviewChart";
 import { CardContent } from "@material-ui/core";
 
+import data from "../../statics/data.json";
+
+let overview = data.overview
+
 export interface IOverviewProps {}
 
 export default function Overview(props: IOverviewProps) {
@@ -25,7 +29,7 @@ export default function Overview(props: IOverviewProps) {
           }}
         />
         <CardContent>
-          <OverviewMeta />
+          <OverviewMeta overview={overview}/>
           <OverviewChart />
         </CardContent>
       </Card>

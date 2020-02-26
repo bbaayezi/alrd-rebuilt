@@ -1,11 +1,16 @@
-import * as React from 'react';
+import * as React from "react";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+import Skeleton from "@material-ui/lab/Skeleton";
 
-export interface IKeywordsProps {
-}
+import data from "../../statics/data.json";
 
-export default function Keywords (props: IKeywordsProps) {
+let keywords = data.keyword;
+export interface IKeywordsProps {}
+
+export default function Keywords(props: IKeywordsProps) {
   return (
     <div>
       <Card
@@ -21,6 +26,17 @@ export default function Keywords (props: IKeywordsProps) {
             color: "primary"
           }}
         />
+        <CardContent style={{ paddingTop: 0 }}>
+          {keywords.length > 0 ? null : (
+            <React.Fragment>
+              <Typography variant="subtitle1">Currently Unavailable</Typography>
+              <Skeleton variant="text" />
+              <Skeleton variant="text" />
+              <Skeleton variant="text" />
+              <Skeleton variant="text" />
+            </React.Fragment>
+          )}
+        </CardContent>
       </Card>
     </div>
   );

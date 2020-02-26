@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Chart } from "react-google-charts";
-import data from "../../statics/data.json";
 
 export interface IGeographicChartProps {
   data: Array<Object>;

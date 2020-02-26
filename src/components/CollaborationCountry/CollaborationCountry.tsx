@@ -6,6 +6,8 @@ import GeographicChart from "./GeographicChart";
 import data from "../../statics/data.json";
 import { CardContent } from "@material-ui/core";
 
+let partnerCountry = data.partnerCountry;
+
 export interface ICollaborationCountryProps {}
 
 export default function CollaborationCountry(
@@ -27,7 +29,7 @@ export default function CollaborationCountry(
           }}
         />
         <CardContent>
-          <GeographicChart data={data.partnerCountry} />
+          <GeographicChart data={partnerCountry} />
         </CardContent>
       </Card>
     </div>

@@ -1,18 +1,14 @@
 import * as React from "react";
-import CardContent from "@material-ui/core/CardContent";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import { Grid, ListItemIcon, Box } from "@material-ui/core";
-import Icon from "@material-ui/core/Icon";
-import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 import OverviewTag from "./OverviewTag";
 
-import data from "../../statics/data.json";
+import { IOverview } from "../../interfaces/IData";
 
-export interface IOverviewMetaProps {}
+export interface IOverviewMetaProps {
+  overview: IOverview;
+}
 
 export default function OverviewMeta(props: IOverviewMetaProps) {
-  let overview = data.overview;
   // funtion to create tags
   let createTag = (icon: string, title: string, subtitle: string) => (
     <OverviewTag icon={icon} title={title} subtitle={subtitle} />
@@ -22,23 +18,31 @@ export default function OverviewMeta(props: IOverviewMetaProps) {
     <div>
       <Grid container justify="flex-start">
         <Grid item xs={6}>
-          {createTag("label", "Publications", overview.metadata.toString())}
+          {createTag(
+            "label",
+            "Publications",
+            props.overview.metadata.toString()
+          )}
         </Grid>
         <Grid item xs={6}>
-          {createTag("account_box", "Authors", overview.authors.toString())}
+          {createTag(
+            "account_box",
+            "Authors",
+            props.overview.authors.toString()
+          )}
         </Grid>
         <Grid item xs={6}>
           {createTag(
             "date_range",
             "Years",
-            `${overview.years.start} - ${overview.years.end}`
+            `${props.overview.years.start} - ${props.overview.years.end}`
           )}
         </Grid>
         <Grid item xs={6}>
           {createTag(
             "school",
             "Total Citations",
-            overview.citations.toString()
+            props.overview.citations.toString()
           )}
         </Grid>
       </Grid>
