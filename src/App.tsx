@@ -1,80 +1,97 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardHeader from "@material-ui/core/CardHeader";
-import Avatar from "@material-ui/core/Avatar";
-
-import Typography from "@material-ui/core/Typography";
 
 import LatestPaperList from "./components/LatestPaperList";
+import PartnerCountry from "./components/PartnerCountry";
+import Keyword from "./components/Keyword";
+// import Statistics from "./components/Statistics";
+
+import LatestPublications from "./components/Latest/LatestPublications";
+import Overview from "./components/Overview/Overview";
+import CollaborationCountry from "./components/CollaborationCountry/CollaborationCountry";
+import Keywords from "./components/Keywords/Keywords";
+import Statistics from "./components/Statistics/Statistics";
+
+// TODO: get data asynchronously
+const data = require("./statics/data.json");
 
 // styles for basic layout
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    container: {
+      padding: "22px",
+      paddingTop: "10px",
+      paddingLeft: "2px",
+      height: "900px"
+    },
     upper: {
-      height: "60vh"
+      position: "relative",
     },
     lower: {
-      height: "40vh"
     }
   })
 );
 
 const App: React.FC = () => {
   const classes = useStyles();
+
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.tsx</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
     <React.Fragment>
       <CssBaseline />
       {/* layout using grid system from Material-UI */}
-      <Paper className={classes.upper}>
-        <Grid container spacing={1}>
-          <Grid item xs={4}>
-            <Typography variant="h3">LATEST</Typography>
-            <LatestPaperList />
+      <div className={classes.container}>
+        {/* <Grid container spacing={1}>
+          <Grid item xs={12} md={4}> */}
+        {/* Latest */}
+        {/* <LatestPaperList data={data.latest} />
           </Grid>
-          <Grid item xs={4}>
-            <Card>
-              <CardHeader
-                avatar={<Avatar>Y</Avatar>}
-                title="Yuxiao Fang"
-                subheader="2020-05-01"
-              />
-              <CardContent>
-                <Typography variant="h5">
-                  Aqueous solution-processed AlOx dielectrics and their biased
-                  radiation response investigated by an on-site technique
-                </Typography>
-                <Typography></Typography>
-              </CardContent>
-            </Card>
+          <Grid item xs={12} md={4}> */}
+        {/* Overview */}
+        {/* <Overview data={data.overview} />
+          </Grid>
+          <Grid item xs={12} md={4}> */}
+        {/* Partner Country */}
+        {/* <PartnerCountry data={data.partnerCountry} />
           </Grid>
         </Grid>
-      </Paper>
-      <div className={classes.lower}>Lower parts</div>
+        <Grid container spacing={1}>
+          <Grid item xs={12} md={4}> */}
+        {/* keywords */}
+        {/* <Keyword keywords={data.keyword} />
+          </Grid>
+          <Grid item xs={12} md={8}> */}
+        {/* Statistics */}
+        {/* <Statistics data={data.statistics} />
+          </Grid>
+        </Grid> */}
+        <div className={classes.upper}>
+          <Grid container spacing={1}>
+            <Grid item xs={12} md={4}>
+              <LatestPublications />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Overview />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <CollaborationCountry />
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.lower}>
+          <Grid container spacing={1}>
+            <Grid item xs={12} md={4}>
+              <Keywords />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Statistics />
+            </Grid>
+          </Grid>
+        </div>
+      </div>
     </React.Fragment>
   );
 };
