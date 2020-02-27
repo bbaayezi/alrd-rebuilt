@@ -4,6 +4,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
+import axios from "axios"
 
 import LatestListItem from "./LatestListItem";
 
@@ -12,9 +13,11 @@ import { ILatestItem } from "../../interfaces/IData";
 
 let latestList: Array<ILatestItem> = data.latest;
 
-export interface ILatestPublicationsProps {}
+export interface ILatestPublicationsProps { }
 
 export default function LatestPublications(props: ILatestPublicationsProps) {
+  // get 
+
   let length = latestList.length;
   let latest = latestList.map((item, index) => {
     const divider = <Divider variant="middle" component="li" />;
