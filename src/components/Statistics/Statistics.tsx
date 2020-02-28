@@ -123,7 +123,7 @@ export default function Statistics(props: IStatisticsProps) {
               <TableHead>
                 <TableRow>
                   <TableCell>
-                    <Typography variant="h6">Publisher</Typography>
+                    <Typography variant="h6">Source</Typography>
                   </TableCell>
                   <TableCell></TableCell>
                   <TableCell>
