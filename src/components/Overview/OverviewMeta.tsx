@@ -21,7 +21,7 @@ export default function OverviewMeta(props: IOverviewMetaProps) {
           {createTag(
             "label",
             "Publications",
-            props.overview.metadata.toString()
+            props.overview.publications.toString()
           )}
         </Grid>
         <Grid item xs={6}>
@@ -35,7 +35,7 @@ export default function OverviewMeta(props: IOverviewMetaProps) {
           {createTag(
             "date_range",
             "Years",
-            `${props.overview.years.start} - ${props.overview.years.end}`
+            `${props.overview.startYear} - ${props.overview.endYear}`
           )}
         </Grid>
         <Grid item xs={6}>

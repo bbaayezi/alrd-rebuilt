@@ -1,28 +1,37 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
-import axios from "axios"
+import API from "../../service/api";
 
 import LatestListItem from "./LatestListItem";
 
-import data from "../../statics/data.json";
 import { ILatestItem } from "../../interfaces/IData";
 
-let latestList: Array<ILatestItem> = data.latest;
-
-export interface ILatestPublicationsProps { }
+export interface ILatestPublicationsProps {}
 
 export default function LatestPublications(props: ILatestPublicationsProps) {
-  // get 
-
+  // get
+  const [latestList, setLatestList] = useState<Array<ILatestItem>>([]);
+  useEffect(() => {
+    API.get("latest")
+      .then(res => {
+        if (res.data.status === "ok") {
+          setLatestList(res.data.data);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
   let length = latestList.length;
   let latest = latestList.map((item, index) => {
     const divider = <Divider variant="middle" component="li" />;
     return (
-      <React.Fragment>
+      <React.Fragment key={index}>
         <LatestListItem
           title={item.title}
           author={item.author}

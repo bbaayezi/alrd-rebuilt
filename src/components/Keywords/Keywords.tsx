@@ -1,21 +1,48 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Skeleton from "@material-ui/lab/Skeleton";
+import ReactWordcloud, { Word } from "react-wordcloud";
 
+import API from "../../service/api";
 import data from "../../statics/data.json";
+import { INumberedMap } from "../../interfaces/IData";
 
-let keywords = data.keyword;
 export interface IKeywordsProps {}
 
 export default function Keywords(props: IKeywordsProps) {
+  const [keywords, setKeywords] = useState<INumberedMap>({});
+  useEffect(() => {
+    API.get("keywords")
+      .then(res => {
+        if (res.data.status === "ok") {
+          console.log(res.data.data);
+          setKeywords(res.data.data);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+  // setup word cloud array
+  let wordcloudArray: Array<Word> = [];
+  for (const key in keywords) {
+    if (keywords.hasOwnProperty(key)) {
+      const value = keywords[key];
+      wordcloudArray.push({
+        text: key,
+        value: value
+      });
+    }
+  }
   return (
     <div>
       <Card
         style={{
-          height: "330px"
+          height: "518px"
         }}
       >
         <CardHeader
@@ -27,7 +54,11 @@ export default function Keywords(props: IKeywordsProps) {
           }}
         />
         <CardContent style={{ paddingTop: 0 }}>
-          {keywords.length > 0 ? null : (
+          {wordcloudArray.length > 0 ? (
+            <div style={{ height: 400, width: "100%" }}>
+              <ReactWordcloud words={wordcloudArray} />
+            </div>
+          ) : (
             <React.Fragment>
               <Typography variant="subtitle1">Currently Unavailable</Typography>
               <Skeleton variant="text" />

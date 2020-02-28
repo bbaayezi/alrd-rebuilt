@@ -1,18 +1,30 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import GeographicChart from "./GeographicChart";
 
-import data from "../../statics/data.json";
+import API from "../../service/api";
 import { CardContent } from "@material-ui/core";
-
-let partnerCountry = data.partnerCountry;
+import { IPartnerCountry } from "../../interfaces/IData";
 
 export interface ICollaborationCountryProps {}
 
 export default function CollaborationCountry(
   props: ICollaborationCountryProps
 ) {
+  const [partner, setPartner] = useState<IPartnerCountry>({});
+  useEffect(() => {
+    API.get("partnerCountry")
+      .then(res => {
+        if (res.data.status === "ok") {
+          setPartner(res.data.data);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div>
       <Card
@@ -29,7 +41,7 @@ export default function CollaborationCountry(
           }}
         />
         <CardContent>
-          <GeographicChart data={partnerCountry} />
+          <GeographicChart data={partner} />
         </CardContent>
       </Card>
     </div>

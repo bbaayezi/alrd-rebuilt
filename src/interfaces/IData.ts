@@ -1,8 +1,10 @@
 export interface IStatistics {
-  publisher: Array<Object>;
-  contentType: Array<Object>;
-  byYear: Array<Object>;
-  language: Array<Object>;
+  publisher: {
+    [key: string]: number;
+  };
+  contentType: {
+    [key: string]: number;
+  };
 }
 
 export interface ILatestItem {
@@ -12,13 +14,21 @@ export interface ILatestItem {
 }
 
 export interface IOverview {
-  metadata: number;
-  firstAuthor: number;
+  publications: number;
   authors: number;
   citations: number;
-  fulltext: number;
-  years: {
-    start: number;
-    end: number;
-  };
+  startYear: string;
+  endYear: string;
+}
+
+export interface IYearlySummary {
+  [key: string]: number;
+}
+
+export interface IPartnerCountry {
+  [key: string]: number;
+}
+
+export interface INumberedMap {
+  [key: string]: number;
 }

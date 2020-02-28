@@ -1,17 +1,20 @@
 import * as React from "react";
 import { Chart } from "react-google-charts";
+import { IPartnerCountry } from "../../interfaces/IData";
 
 export interface IGeographicChartProps {
-  data: Array<Object>;
+  data: IPartnerCountry;
 }
 
 export default function GeographicChart(props: IGeographicChartProps) {
   const partnerCountry = props.data;
-  const arrayPairs = partnerCountry.map(obj => {
-    for (let key in obj) {
-      return [key, Object.values(obj)[0]];
+  let arrayPairs = [];
+  for (const key in partnerCountry) {
+    if (partnerCountry.hasOwnProperty(key)) {
+      const value = partnerCountry[key];
+      arrayPairs.push([key, value]);
     }
-  });
+  }
   return (
     <React.Fragment>
       <Chart
