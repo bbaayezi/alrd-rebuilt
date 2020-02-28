@@ -5,10 +5,10 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Skeleton from "@material-ui/lab/Skeleton";
-import ReactWordcloud, { Word } from "react-wordcloud";
+import ReactWordcloud, { Word, OptionsProp, Scale } from "react-wordcloud";
 
 import API from "../../service/api";
-import data from "../../statics/data.json";
+
 import { INumberedMap } from "../../interfaces/IData";
 
 export interface IKeywordsProps {}
@@ -19,7 +19,6 @@ export default function Keywords(props: IKeywordsProps) {
     API.get("keywords")
       .then(res => {
         if (res.data.status === "ok") {
-          console.log(res.data.data);
           setKeywords(res.data.data);
         }
       })
@@ -38,6 +37,14 @@ export default function Keywords(props: IKeywordsProps) {
       });
     }
   }
+  // setup wordcloud options
+  let wordcloudOption: OptionsProp = {
+    scale: Scale.Sqrt,
+    fontFamily: "impact",
+    fontSizes: [5, 60],
+    rotations: 3,
+    rotationAngles: [0, 90]
+  };
   return (
     <div>
       <Card
@@ -56,7 +63,10 @@ export default function Keywords(props: IKeywordsProps) {
         <CardContent style={{ paddingTop: 0 }}>
           {wordcloudArray.length > 0 ? (
             <div style={{ height: 400, width: "100%" }}>
-              <ReactWordcloud words={wordcloudArray} />
+              <ReactWordcloud
+                words={wordcloudArray}
+                options={wordcloudOption}
+              />
             </div>
           ) : (
             <React.Fragment>

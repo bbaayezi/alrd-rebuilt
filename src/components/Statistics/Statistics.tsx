@@ -97,7 +97,6 @@ export default function Statistics(props: IStatisticsProps) {
     }
   });
 
-  let publisherTable = () => {};
   return (
     <div>
       <Card
