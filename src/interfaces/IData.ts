@@ -1,5 +1,5 @@
 export interface IStatistics {
-  publisher: {
+  publicationName: {
     [key: string]: number;
   };
   contentType: {

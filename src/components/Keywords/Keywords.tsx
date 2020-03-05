@@ -16,7 +16,7 @@ export interface IKeywordsProps {}
 export default function Keywords(props: IKeywordsProps) {
   const [keywords, setKeywords] = useState<INumberedMap>({});
   useEffect(() => {
-    API.get("keywords")
+    API.get("authKeywords")
       .then(res => {
         if (res.data.status === "ok") {
           setKeywords(res.data.data);
@@ -49,7 +49,7 @@ export default function Keywords(props: IKeywordsProps) {
     <div>
       <Card
         style={{
-          height: "518px"
+          height: "596px"
         }}
       >
         <CardHeader
@@ -62,7 +62,7 @@ export default function Keywords(props: IKeywordsProps) {
         />
         <CardContent style={{ paddingTop: 0 }}>
           {wordcloudArray.length > 0 ? (
-            <div style={{ height: 400, width: "100%" }}>
+            <div style={{ height: 500, width: "100%" }}>
               <ReactWordcloud
                 words={wordcloudArray}
                 options={wordcloudOption}

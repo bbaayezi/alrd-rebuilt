@@ -19,25 +19,25 @@ import { INumberedMap, IStatistics } from "../../interfaces/IData";
 
 export interface IStatisticsProps {}
 
-let publisherList: Array<INumberedMap> = [];
+let publicationNameList: Array<INumberedMap> = [];
 let contentTypeList: Array<INumberedMap> = [];
 
 export default function Statistics(props: IStatisticsProps) {
   const [statistics, setStatistics] = useState<IStatistics>({
-    publisher: {},
+    publicationName: {},
     contentType: {}
   });
 
   useEffect(() => {
     (async () => {
       try {
-        let pubRes = await API.get("publisher");
+        let pubRes = await API.get("publicationName");
         let contentRes = await API.get("contentType");
         if (pubRes.data.status === "ok") {
           if (contentRes.data.status === "ok") {
             // set state
             setStatistics({
-              publisher: pubRes.data.data,
+              publicationName: pubRes.data.data,
               contentType: contentRes.data.data
             });
           }
@@ -47,15 +47,15 @@ export default function Statistics(props: IStatisticsProps) {
       }
     })();
   }, []);
-  // iterate through publisher
-  for (const key in statistics.publisher) {
-    const value = statistics.publisher[key];
-    publisherList.push({
+  // iterate through publicationName
+  for (const key in statistics.publicationName) {
+    const value = statistics.publicationName[key];
+    publicationNameList.push({
       [key]: value
     });
   }
   // sort
-  publisherList.sort((a, b) =>
+  publicationNameList.sort((a, b) =>
     Object.values(a)[0] > Object.values(b)[0] ? -1 : 1
   );
   // iterate through content type
@@ -70,7 +70,7 @@ export default function Statistics(props: IStatisticsProps) {
     Object.values(a)[0] > Object.values(b)[0] ? -1 : 1
   );
 
-  let tableContent = publisherList.map((item, index) => {
+  let tableContent = publicationNameList.map((item, index) => {
     if (contentTypeList.length - 1 > index) {
       let contentTypeItem = contentTypeList[index];
       return (
