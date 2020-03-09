@@ -125,7 +125,7 @@ export default function Statistics(props: IStatisticsProps) {
                     <Typography variant="h6">Source</Typography>
                   </TableCell>
                   <TableCell></TableCell>
-                  <TableCell>
+                  <TableCell style={{ width: "25%" }}>
                     <Typography variant="h6">Content Type</Typography>
                   </TableCell>
                   <TableCell></TableCell>
